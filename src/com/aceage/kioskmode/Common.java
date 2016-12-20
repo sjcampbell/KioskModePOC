@@ -8,7 +8,7 @@ import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.widget.Toast;
 
-public class Common {
+class Common {
 
     static void showToast(Context context, String text) {
         Toast.makeText(context, text, Toast.LENGTH_LONG).show();

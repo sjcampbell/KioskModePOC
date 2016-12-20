@@ -6,11 +6,10 @@ import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.Toast;
 
 public class KioskModeApp extends Activity implements View.OnTouchListener {
 
-    private ActivityLocker locker;
+    private ActivityLocker mLocker;
 
     @Override
     public boolean onTouch(View view, MotionEvent motionEvent) {
@@ -24,7 +23,7 @@ public class KioskModeApp extends Activity implements View.OnTouchListener {
         setContentView(R.layout.main);
 
         try {
-            locker = new ActivityLocker(this);
+            mLocker = new ActivityLocker(this);
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         }
         catch(Exception ex) {
@@ -35,6 +34,6 @@ public class KioskModeApp extends Activity implements View.OnTouchListener {
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        return locker.onKeyDown(keyCode);
+        return mLocker.onKeyDown(keyCode);
     }
 }
