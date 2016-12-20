@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-	Kiosk Mode demo for Android Lollipop
-	
-	Copyright 2015, SDG Systems, LLC
+	Kiosk Mode proof of concept app for Android
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="sdg.example.kiosk_mode"
+    package="com.aceage.kioskmode"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -15,7 +13,7 @@
 
     <application android:label="@string/app_name" >
         <activity
-            android:name="sdg.example.kiosk_mode.KioskModeDemo"
+            android:name="com.aceage.kioskmode.KioskModeApp"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,7 +24,7 @@
         </activity>
 
         <receiver
-            android:name="sdg.example.kiosk_mode.AdminReceiver"
+            android:name="com.aceage.kioskmode.AdminReceiver"
             android:label="@string/device_admin"
             android:permission="android.permission.BIND_DEVICE_ADMIN" >
             <meta-data

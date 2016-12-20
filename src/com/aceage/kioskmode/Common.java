@@ -1,4 +1,4 @@
-package sdg.example.kiosk_mode;
+package com.aceage.kioskmode;
 
 import android.app.admin.DevicePolicyManager;
 import android.content.ComponentName;
@@ -11,9 +11,7 @@ import android.widget.Toast;
 public class Common {
 
     static void showToast(Context context, String text) {
-        if (BuildConfig.DEBUG) {
-            //Toast.makeText(context, text, Toast.LENGTH_LONG).show();
-        }
+        Toast.makeText(context, text, Toast.LENGTH_LONG).show();
     }
 
     static String getHomeActivity(Context c) {
@@ -27,7 +25,7 @@ public class Common {
             return "none";
     }
 
-    static void becomeHomeActivity(Context c) {
+    static void becomeHomeActivity(Context c, Class<?> appClass) {
         ComponentName deviceAdmin = new ComponentName(c, AdminReceiver.class);
         DevicePolicyManager dpm = (DevicePolicyManager) c.getSystemService(Context.DEVICE_POLICY_SERVICE);
 
@@ -42,7 +40,7 @@ public class Common {
         IntentFilter intentFilter = new IntentFilter(Intent.ACTION_MAIN);
         intentFilter.addCategory(Intent.CATEGORY_DEFAULT);
         intentFilter.addCategory(Intent.CATEGORY_HOME);
-        ComponentName activity = new ComponentName(c, KioskModeDemo.class);
+        ComponentName activity = new ComponentName(c, appClass);
         dpm.addPersistentPreferredActivity(deviceAdmin, intentFilter, activity);
         showToast(c, "Home activity: " + getHomeActivity(c));
     }

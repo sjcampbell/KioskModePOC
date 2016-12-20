@@ -2,33 +2,19 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical" 
-    android:id="@+id/main">
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="50dp"
-        android:text="Enter Kiosk Mode"
-        android:onClick="toggleKioskMode" />
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:weightSum="1">
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
+    <TextView
+        android:text="To toggle kiosk mode,\n press in order:\n\n \t\tback\n \t\tvolume down\n \t\tvolume up"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_gravity="center_horizontal"
-        android:text="Become Home Activity"
-        android:onClick="setLauncher" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_gravity="center_horizontal"
-        android:text="Restore Home Activity"
-        android:onClick="restoreLauncher" />
-
+        android:id="@+id/textView"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingStart="10dp"
+        android:paddingTop="10dp"
+        android:textAlignment="center" />
 </LinearLayout>
